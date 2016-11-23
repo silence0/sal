@@ -1,0 +1,74 @@
+<% provide(:title, "association") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <%= stylesheet_link_tag 'static_pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'static_pages', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="page-wrapper">
+      <%= render "shared/header" %>
+      <div id="main">
+        <div class="container">
+          <div class="row main-row">
+            <div class="4u 12u(mobile)">
+            </div>
+            <div class="4u 12u(mobile) important(mobile)">
+              <section class="middle-content">
+                <%= form_for(@club, html: { multipart: true }) do |f| %>
+                  <%= render 'shared/error_messages', object: f.object %>
+                  <div class="gravatar_edit">
+                    <% if @club.logo? %>
+                      <%= image_tag @club.logo.url %>
+                    <% else %>
+                      <%= gravatar_for @club %>
+                    <% end %>
+                  </div>
+                  <div class="center">
+                    <label>上传头像</label>
+                    <span class="picture">
+                      <%= f.file_field :logo, accept: 'image/jpeg,image/gif,image/png'%>
+                    </span>
+                  </div>
+                  <div class="center">
+                    <%= f.label :name %><br/>
+                    <%= f.text_field :name, class: 'form-control' %>
+                  </div>
+                  <div class="center">
+                    <%= f.label :email %><br/>
+                    <%= f.text_field :email, class: 'form-control' %>
+                  </div>
+                  <div class="center">
+                    <%= f.label :introduction %><br/>
+                    <%= f.text_field :introduction, class: 'form-control' %>
+                  </div>
+
+                  <div class="btncter">
+                  <%= f.submit "确认修改", class: "button form-control " %>
+                  </div>
+                <% end %>         
+              </section>
+            </div>
+            <div class="4u 12u(mobile)">
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= render "shared/footer" %>
+    </div>
+  </body>
+
+    <script type="text/javascript">
+      $('#club_logo').bind('change', function() {
+        size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+          alert('Maximum file size is 5MB. Please choose a smaller file.');
+        }
+      });
+    </script>
+</html>

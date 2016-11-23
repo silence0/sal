@@ -1,0 +1,210 @@
+<% provide(:title, "All associations") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <%= stylesheet_link_tag 'static_pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'static_pages', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <div id="page-wrapper">
+      <%= render "shared/header" %>
+        <div id="main" class="wrapper style1">
+          <div class="container">
+            <header class="major">
+              <h2>学生社团</h2>
+              <p>带走一曲回忆，交集在人生的旅途，﻿消失在茫茫人海。﻿</p>
+            </header>
+            <div class="row 150%">
+              <div class="8u 12u$(medium)">
+                <!-- Content -->
+                  <section id="content">
+                    <a href="#" class="image fit"><%= image_tag "static_pages_images/pic06.jpg" %></a>
+                    <h3 class="border-bottom">社团分类</h3>
+                    <div class="border-bottom">
+                      <label id= "l_1" class= "inline show_l">政治理论类</label>
+                      <label id= "l_2" class= "inline show_l">学术科创类</label>
+                      <label id= "l_3" class= "inline show_l">文化艺术类</label>
+                      <label id= "l_4" class= "inline show_l">体育健身类</label>
+                      <label id= "l_5" class= "inline show_l">公益志愿类</label>
+                      <label id= "l_6" class= "inline show_l">实践促进类</label>
+                      <label id= "l_7" class= "inline show_l">合作交流类</label>
+                      <label id= "l_8" class= "inline show_l">地域文化类</label>
+                    </div>
+                    <ul id="l_1u" class="link-list current">
+                      <% @clubs.each do |club| %>
+                        <% if club.classify == 'politics' %>
+                          <li>
+                            <% if club.logo? %>
+                              <%= image_tag club.logo.url %>
+                            <% else %>
+                              <%= gravatar_for club %>                   
+                            <% end %>
+                            <%= link_to club.name, club %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                    </ul>
+                    <ul id="l_2u" class="link-list none">
+                      <% @clubs.each do |club| %>
+                        <% if club.classify == 'academy' %>
+                          <li>
+                            <% if club.logo? %>
+                              <%= image_tag club.logo.url %>
+                            <% else %>
+                              <%= gravatar_for club %>                   
+                            <% end %>
+                            <%= link_to club.name, club %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                    </ul>
+                    <ul id="l_3u" class="link-list none">
+                      <% @clubs.each do |club| %>
+                        <% if club.classify == 'art' %>
+                          <li>
+                            <% if club.logo? %>
+                              <%= image_tag club.logo.url %>
+                            <% else %>
+                              <%= gravatar_for club %>                   
+                            <% end %>
+                            <%= link_to club.name, club %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                    </ul>
+                    <ul id="l_4u" class="link-list none">
+                      <% @clubs.each do |club| %>
+                        <% if club.classify == 'sport' %>
+                          <li>
+                            <% if club.logo? %>
+                              <%= image_tag club.logo.url %>
+                            <% else %>
+                              <%= gravatar_for club %>                   
+                            <% end %>
+                            <%= link_to club.name, club %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                    </ul>
+                    <ul id="l_5u" class="link-list none">
+                      <% @clubs.each do |club| %>
+                        <% if club.classify == 'public' %>
+                          <li>
+                            <% if club.logo? %>
+                              <%= image_tag club.logo.url %>
+                            <% else %>
+                              <%= gravatar_for club %>                   
+                            <% end %>
+                            <%= link_to club.name, club %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                    </ul>
+                    <ul id="l_6u" class="link-list none">
+                      <% @clubs.each do |club| %>
+                        <% if club.classify == 'practice' %>
+                          <li>
+                            <% if club.logo? %>
+                              <%= image_tag club.logo.url %>
+                            <% else %>
+                              <%= gravatar_for club %>                   
+                            <% end %>
+                            <%= link_to club.name, club %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                    </ul>
+                    <ul id="l_7u" class="link-list none">
+                      <% @clubs.each do |club| %>
+                        <% if club.classify == 'coopration' %>
+                          <li>
+                            <% if club.logo? %>
+                              <%= image_tag club.logo.url %>
+                            <% else %>
+                              <%= gravatar_for club %>                   
+                            <% end %>
+                            <%= link_to club.name, club %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                    </ul>
+                    <ul id="l_8u" class="link-list none">
+                      <% @clubs.each do |club| %>
+                        <% if club.classify == 'region' %>
+                          <li>
+                            <% if club.logo? %>
+                              <%= image_tag club.logo.url %>
+                            <% else %>
+                              <%= gravatar_for club %>                   
+                            <% end %>
+                            <%= link_to club.name, club %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                    </ul>
+                  </section>
+              </div>
+              <div class="4u$ 12u$(medium)">
+
+                <!-- Sidebar -->
+                  <section id="sidebar">
+                    <section>
+                      <h3 class="border-bottom">最新动态</h3>
+                      <ul>
+                        <li><a href="#">我的2016星空摄影之旅</a></li>
+                        <li><a href="#">三月DIY手工专场~</a></li>
+                        <li><a href="#">徒步七月行</a></li>
+                        <li><a href="#">山区支教~</a></li>
+
+                      </ul>
+                      <footer>
+                        <ul class="actions">
+                          <li><a href="#" class="button small">Learn More</a></li>
+                        </ul>
+                      </footer>
+                    </section>
+                    <hr />
+                    <section>
+                      <a href="#" class="image fit"><%= image_tag "static_pages_images/pic10.jpg" %></a>
+                      <h3 class="border-bottom">活跃社团</h3>
+                      <ol>
+                        <li>Dolor pulvinar etiam magna etiam.</li>
+                        <li>Etiam vel felis at lorem sed viverra.</li>
+                        <li>Felis enim feugiat dolore viverra.</li>
+                        <li>Dolor pulvinar etiam magna etiam.</li>
+                        <li>Etiam vel felis at lorem sed viverra.</li>
+                        <li>Felis enim feugiat dolore viverra.</li>
+                      </ol>
+                      <footer>
+                        <ul class="actions">
+                          <li><a href="#" class="button small">Learn More</a></li>
+                        </ul>
+                      </footer>
+                    </section>
+                  </section>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      <%= render "shared/footer" %>
+    </div>
+  </body>
+      <script>
+      $(document).ready(function(){
+        console.log("ready?")
+        $(".show_l").click(function(){
+          var _u_id_ = "#" + $(this).attr("id") + "u";
+          $(".current").addClass("none");
+          $(".current").removeClass("current");
+          $(_u_id_).removeClass("none");
+          $(_u_id_).addClass("current");
+        });
+      });
+    </script>

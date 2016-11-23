@@ -1,0 +1,15 @@
+.center {
+	margin:10px;
+	padding: 10px;
+	
+}
+.text {
+	text-align:center;
+}
+.form-control{
+	width: 100%;
+}
+
+.btncter {
+	margin:0 25%;
+}

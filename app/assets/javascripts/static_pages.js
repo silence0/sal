@@ -1,0 +1,9 @@
+//= require jquery.min
+//= require jquery_ujs
+//= require turbolinks
+//= require static_pages_js/jquery.scrolly.min
+//= require static_pages_js/jquery.scrollex.min
+//= require static_pages_js/skel.min
+//= require static_pages_js/util
+//= require static_pages_js/main
+//= require static_pages_js/me

@@ -1,0 +1,144 @@
+
+<% provide(:title, @user.name) %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>edit:<%= yield(:title) %></title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <%= stylesheet_link_tag 'static_pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'static_pages', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="page-wrapper">
+      <%= render "shared/header" %>
+      <div id="main">
+        <div class="container ">
+          <div class="row 150%">
+            <div class="12u 12u$(medium) important(medium) text">
+              <section>
+<!--                 <%= form_for(@user, html: { multipart: true }) do |f| %>
+                  <%= render 'shared/error_messages', object: f.object %>
+                  <div class="gravatar_edit center text">
+                    <% if @user.logo? %>
+                      <%= image_tag @user.logo.url %>
+                    <% else %>
+                      <%= gravatar_for @user %>
+                    <% end %>
+                  </div>
+                  <div class="center">
+                    <label>上传头像</label>
+                    <span class="picture">
+                      <%= f.file_field :logo, accept: 'image/jpeg,image/gif,image/png'%>
+                    </span>
+                  </div>
+                  <div class="center">
+                    <%= f.label :name %><br/>
+                    <%= f.text_field :name, class: 'form-control' %>
+                  </div>
+                  <div class="center">
+                    <%= f.label :email %><br/>
+                    <%= f.text_field :email, class: 'form-control' %>
+                  </div>
+                  <div class="center">
+                    <%= f.label :password %><br/>
+                    <%= f.password_field :password, class: 'form-control' %>
+                  </div>
+                  <div class="center">
+                    <%= f.label :password_confirmation, "Confirmation" %><br/>
+                    <%= f.password_field :password_confirmation, class: 'form-control' %>
+                  </div>
+                  <div class="btncter">
+                  <%= f.submit "确认修改", class: "button form-control " %>
+                  </div>
+                <% end %>  -->        
+              </section>
+              <section>
+                <h3>个人信息编辑</h3>
+                 <%= form_for(@user, html: { multipart: true }) do |f| %>
+                  <div class="gravatar_edit center text">
+                    <% if @user.logo? %>
+                      <%= image_tag @user.logo.url %>
+                    <% else %>
+                      <%= gravatar_for @user %>
+                    <% end %>
+                  </div>
+                  <div class="center">
+                    <label>上传头像</label>
+                    <span class="picture">
+                      <%= f.file_field :logo, accept: 'image/jpeg,image/gif,image/png'%>
+                    </span>
+                  </div>
+                  <div class="row uniform 50%">
+                    <div class="6u 12u$(xsmall)">
+                      <%= f.text_field :name, class: 'form-control' , placeholder: 'Name'%>
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                      <%= f.text_field :email, class: 'form-control', placeholder: "Email" %>
+                    </div>
+                    <div class="12u$">
+                      <%= f.password_field :password, class: 'form-control', placeholder: "Password"%>
+                    </div>
+                    <div class="12u$">
+                      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Password Confirmation"%>
+                    </div>
+                    <div class="4u 12u$(xsmall)">
+                      <div class="select-wrapper">
+                        <select name="user[grade]" id="user_grade">
+                          <option value="">- 年级 -</option>
+                          <option value="1997">1997</option>
+                          <option value="1998">1998</option>
+                          <option value="1999">1999</option>
+                          <option value="2000">2000</option>
+                          <option value="2001">2001</option>
+                          <option value="2002">2002</option>
+                          <option value="2003">2003</option>
+                          <option value="2004">2004</option>
+                          <option value="2005">2005</option>
+                          <option value="2006">2006</option>
+                          <option value="2007">2007</option>
+                          <option value="2008">2008</option>
+                          <option value="2009">2009</option>
+                          <option value="2010">2010</option>
+                          <option value="2011">2011</option>
+                          <option value="2012">2012</option>
+                          <option value="2013">2013</option>
+                          <option value="2014">2014</option>
+                          <option value="2015">2015</option>
+                          <option value="2016">2016</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="8u$ 12u$(xsmall)">
+                      <div class="select-wrapper">
+                        <%= f.select :college, options_for_select([["- 学院 -",""],["医学院","医学院"],["萃英学院","萃英学院"],["国际文化交流学院","国际文化交流学院"],["文学院","文学院"],["新闻与传播学院","新闻与传播学院"],["历史文化学院","历史文化学院"],["民族学研究院","民族学研究院"],["哲学社会学院","哲学社会学院"],["经济学院","经济学院"],["管理学院","管理学院"],["外国语学院","外国语学院"],["法学院","法学院"],["马克思主义学院","马克思主义学院"],["艺术学院","艺术学院"],["数学与统计学院","数学与统计学院"],["物理科学与技术学院","物理科学与技术学院"],["核科学与技术学院","核科学与技术学院"],["信息科学与工程学院","信息科学与工程学院"],["化学化工学院","化学化工学院"],["草地农业科技学院","草地农业科技学院"],["生命科学学院","生命科学学院"],["大气科学学院","大气科学学院"],["资源环境学院","资源环境学院"],["土木工程与力学学院","土木工程与力学学院"],["地质科学与矿产资源学院","地质科学与矿产资源学院"],["药学院","药学院"],["基础医学院","基础医学院"],["口腔医学院","口腔医学院（口腔医院）"],["公共卫生学院","公共卫生学院"],["第一临床医学院","第一临床医学院"],["第二临床医学院","第二临床医学院"],["网络与继续教育学院","网络与继续教育学院"]]), class: 'form-control' %>
+                      </div>
+                    </div>
+                    <div class="12u$">
+                      <textarea name="message" id="message" placeholder="Personal Introduction" rows="6"></textarea>
+                    </div>
+                    <div class="12u$">
+                      <%= f.submit "确认修改", class: "button form-control special fit" %>
+                    </div>
+                  </div>
+                <% end %>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= render "shared/footer" %>
+    </div>
+  </body>
+
+    <script type="text/javascript">
+      $('#user_logo').bind('change', function() {
+        size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+          alert('Maximum file size is 5MB. Please choose a smaller file.');
+        }
+      });
+    </script>
+</html>

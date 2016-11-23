@@ -1,0 +1,51 @@
+.center {
+	margin:10px;
+	padding: 10px;
+	
+}
+.text {
+	text-align:center;
+}
+.form-control{
+	width: 100%;
+}
+
+.edit-center{
+	margin: 0 auto;
+}
+.btncter {
+	margin:0 25%;
+}
+
+.inline {
+	display: inline-block;
+	margin: 0 0 1em 1em;
+}
+
+.border-bottom {
+	padding-bottom: 10px;
+    border-bottom: 1px solid #606067;
+    margin-bottom: 18px;
+}
+
+.user-logo {
+	border-radius: 100px;
+	width: 
+}
+
+.margin-bottom {
+	margin-bottom: 1em
+}
+
+.margin-zero {
+	margin:0;
+	text-align: right;
+}
+
+.current {
+	display: block;
+}
+
+.none {
+	display: none;
+}
