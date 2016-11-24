@@ -49,3 +49,9 @@
 .none {
 	display: none;
 }
+
+.create_b {
+	float: right;
+	margin-top: -3em;
+	border-bottom: 0;
+}

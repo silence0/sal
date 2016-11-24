@@ -26,6 +26,7 @@
                   <section id="content">
                     <a href="#" class="image fit"><%= image_tag "static_pages_images/pic06.jpg" %></a>
                     <h3 class="border-bottom">社团分类</h3>
+                    <a href="#" class="create_b">创建社团</a>
                     <div class="border-bottom">
                       <label id= "l_1" class= "inline show_l">政治理论类</label>
                       <label id= "l_2" class= "inline show_l">学术科创类</label>
@@ -41,7 +42,7 @@
                         <% if club.classify == 'politics' %>
                           <li>
                             <% if club.logo? %>
-                              <%= image_tag club.logo.url %>
+                              <%= image_tag club.logo.url, :size => "80x80" %>
                             <% else %>
                               <%= gravatar_for club %>                   
                             <% end %>
@@ -55,7 +56,7 @@
                         <% if club.classify == 'academy' %>
                           <li>
                             <% if club.logo? %>
-                              <%= image_tag club.logo.url %>
+                              <%= image_tag club.logo.url, :size => "80x80" %>
                             <% else %>
                               <%= gravatar_for club %>                   
                             <% end %>
@@ -69,7 +70,7 @@
                         <% if club.classify == 'art' %>
                           <li>
                             <% if club.logo? %>
-                              <%= image_tag club.logo.url %>
+                              <%= image_tag club.logo.url, :size => "80x80" %>
                             <% else %>
                               <%= gravatar_for club %>                   
                             <% end %>
@@ -83,7 +84,7 @@
                         <% if club.classify == 'sport' %>
                           <li>
                             <% if club.logo? %>
-                              <%= image_tag club.logo.url %>
+                              <%= image_tag club.logo.url, :size => "80x80" %>
                             <% else %>
                               <%= gravatar_for club %>                   
                             <% end %>
@@ -97,7 +98,7 @@
                         <% if club.classify == 'public' %>
                           <li>
                             <% if club.logo? %>
-                              <%= image_tag club.logo.url %>
+                              <%= image_tag club.logo.url, :size => "80x80" %>
                             <% else %>
                               <%= gravatar_for club %>                   
                             <% end %>
@@ -111,7 +112,7 @@
                         <% if club.classify == 'practice' %>
                           <li>
                             <% if club.logo? %>
-                              <%= image_tag club.logo.url %>
+                              <%= image_tag club.logo.url, :size => "80x80" %>
                             <% else %>
                               <%= gravatar_for club %>                   
                             <% end %>
@@ -125,7 +126,7 @@
                         <% if club.classify == 'coopration' %>
                           <li>
                             <% if club.logo? %>
-                              <%= image_tag club.logo.url %>
+                              <%= image_tag club.logo.url, :size => "80x80" %>
                             <% else %>
                               <%= gravatar_for club %>                   
                             <% end %>
@@ -139,7 +140,7 @@
                         <% if club.classify == 'region' %>
                           <li>
                             <% if club.logo? %>
-                              <%= image_tag club.logo.url %>
+                              <%= image_tag club.logo.url, :size => "80x80" %>
                             <% else %>
                               <%= gravatar_for club %>                   
                             <% end %>
